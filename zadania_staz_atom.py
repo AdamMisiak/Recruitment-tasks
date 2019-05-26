@@ -407,7 +407,7 @@ def zad5():
             df_zad5_output2 = ''
             type_1 = input('Type the name of 1st voivodeship:')
             type_2 = input('Type the name of 2nd voivodeship:')
-            print(df_man4)
+            #print(df_man4)
             if type_1.isalpha() and type_2.isalpha():
                 if type_1.capitalize() == type_2.capitalize():
                     print("Type two DIFFERENT voivodeship!")
