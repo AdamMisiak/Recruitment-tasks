@@ -17,7 +17,7 @@ To run this project, open command window and type:
 cd C:\Users\Adam\projekt> # or other path where is folder with project files
 python zadania_staz_atom.py
 ```
-To run specified task, type in zadania_staz_atom.py file for example:
+To run specified task, type in the end of zadania_staz_atom.py file for example:
 ```
 zad1()
 ```
