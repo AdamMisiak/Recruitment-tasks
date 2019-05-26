@@ -23,7 +23,18 @@ zad1()
 ```
 or
 ```
+zad2()
+```
+```
+zad3()
+```
+or
+```
 zad4()
+```
+or
+```
+zad5()
 ```
 At the beginning of the file you can find line:
 ```
