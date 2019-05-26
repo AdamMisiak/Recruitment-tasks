@@ -2,7 +2,7 @@ import pandas as pd
 df = pd.read_csv('Liczba_osób_które_przystapiły_lub_zdały_egzamin_maturalny.csv',engine='python',sep=';')
 
 def zad1():
-    gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+    gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
     df_zad1=df[df.Przystąpiło_zdało=='przystąpiło']
     df2 = df_zad1[df_zad1.Terytorium!="Polska"]
     while True:
@@ -21,11 +21,11 @@ def zad1():
             break
         else:
             print("U can type only: 'a','w' or 'm'!")
-        gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+        gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
 
 def zad2():
     df_zad2 = df[df.Terytorium!="Polska"]
-    gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+    gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
     while True:
         if gender.lower() == 'a':
 
@@ -41,7 +41,7 @@ def zad2():
 
             df_pz['Zdawalność']=(round(df_pz['Zdało']/df_pz['Przystąpiło']*100,2)).astype(str)+" %"
             print(df_pz)
-        if gender.lower() == 'w':
+        elif gender.lower() == 'w':
             df_wom = df_zad2[df_zad2.Płeć=='kobiety']
             df_p = df_wom[df_wom.Przystąpiło_zdało=="przystąpiło"]
             df_p1= df_p.groupby(['Terytorium','Rok']).sum()
@@ -56,7 +56,7 @@ def zad2():
             df_pz['Zdawalność']=(round(df_pz['Zdało']/df_pz['Przystąpiło']*100,2)).astype(str)+" %"
 
             print(df_pz)
-        if gender.lower() == 'm':
+        elif gender.lower() == 'm':
             df_man = df_zad2[df_zad2.Płeć=='mężczyźni']
             df_p = df_man[df_man.Przystąpiło_zdało=="przystąpiło"]
             df_p1= df_p.groupby(['Terytorium','Rok']).sum()
@@ -71,15 +71,15 @@ def zad2():
             df_pz['Zdawalność']=(round(df_pz['Zdało']/df_pz['Przystąpiło']*100,2)).astype(str)+" %"
 
             print(df_pz)
-        if gender.lower() == 'exit':
+        elif gender.lower() == 'exit':
             break
         else:
             print("U can type only: 'a','w' or 'm'!")
-        gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+        gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
 
 def zad3():
     df_zad2 = df[df.Terytorium!="Polska"]
-    gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+    gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
     while True:
         if gender.lower() == 'a':
             df_p = df_zad2[df_zad2.Przystąpiło_zdało=="przystąpiło"]
@@ -168,11 +168,11 @@ def zad3():
             break
         else:
             print("U can type only: 'a','w' or 'm'!")
-        gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+        gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
 
 def zad4():
     df_zad2 = df[df.Terytorium!="Polska"]
-    gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+    gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
     while True:
         if gender.lower() == 'a':
             df_p = df_zad2[df_zad2.Przystąpiło_zdało=="przystąpiło"]
@@ -285,11 +285,11 @@ def zad4():
             break
         else:
             print("U can type only: 'a','w' or 'm'!")
-        gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+        gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
 
 def zad5():
     df_zad2 = df[df.Terytorium!="Polska"]
-    gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+    gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
     while True:
         if gender.lower() == 'a':
             df_p = df_zad2[df_zad2.Przystąpiło_zdało=="przystąpiło"]
@@ -407,6 +407,7 @@ def zad5():
             df_zad5_output2 = ''
             type_1 = input('Type the name of 1st voivodeship:')
             type_2 = input('Type the name of 2nd voivodeship:')
+            print(df_man4)
             if type_1.isalpha() and type_2.isalpha():
                 if type_1.capitalize() == type_2.capitalize():
                     print("Type two DIFFERENT voivodeship!")
@@ -440,5 +441,5 @@ def zad5():
             break
         else:
             print("U can type only: 'a','w' or 'm'!")
-        gender = input("For only women filter type: [w].\nFor only men filter type: [m].\nFor all type: [a]\nTo leave: [exit]\n")
+        gender = input("To filter women type: [w].\nTo filter men type: [m].\nWithout filter type: [a]\nTo leave: [exit]\n")
 zad5()
